@@ -69,6 +69,6 @@ class SubdoshasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subdosha_params
-      params.require(:subdosha).permit(:name, :dosha_id_id)
+      params.require(:subdosha).permit(:name, :dosha_id)
     end
 end

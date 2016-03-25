@@ -1,3 +1,3 @@
 class Subdosha < ActiveRecord::Base
-  belongs_to :dosha_id
+  belongs_to :dosha
 end
