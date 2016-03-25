@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Subdoshas</h1>
+<h1>Subdoshas Index</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Dosha</th>
-      <th colspan="3"></th>
+      <th>Subdosha Name</th>
+      <th>Parent Dosha</th>
+      <th colspan="3">Manage Subdosha</th>
     </tr>
   </thead>
 
   <tbody>
     <% @subdoshas.each do |subdosha| %>
       <tr>
-        <td><%= subdosha.name %></td>
-        <td><%= subdosha.dosha_id %></td>
+        <td><%= subdosha.name %> <%= subdosha.dosha.name %></td>
+        <td><%= subdosha.dosha.name %></td>
         <td><%= link_to 'Show', subdosha %></td>
         <td><%= link_to 'Edit', edit_subdosha_path(subdosha) %></td>
-        <td><%= link_to 'Destroy', subdosha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', subdosha, method: :delete, data: { confirm: 'Are you sure you want to delete this Subdosha? This action cannot be undone.' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Subdosha', new_subdosha_path %>
+<%= link_to '+ New Subdosha', new_subdosha_path %>

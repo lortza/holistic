@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  Holistic App | 
+  <%= link_to "Doshas", doshas_path %> | 
+  <%= link_to "Subdoshas", subdoshas_path %>
+  <hr>
+</nav>
 
 <%= yield %>
 

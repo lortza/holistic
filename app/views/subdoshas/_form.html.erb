@@ -12,13 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :dosha_id, "Dosha Name" %><br>
+    <%= f.collection_select :dosha_id, Dosha.all, :id, :name, :prompt => "-- Select One --" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, "Subdosha Name" %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :dosha_id_id %><br>
-    <%= f.text_field :dosha_id_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

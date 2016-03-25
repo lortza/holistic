@@ -1,22 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Doshas</h1>
+<h1>Doshas Index</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Dosha Name</th>
+      <th>Subdoshas</th>
+      <th colspan="3">Manage Dosha</th>
     </tr>
   </thead>
 
   <tbody>
     <% @doshas.each do |dosha| %>
       <tr>
-        <td><%= dosha.name %></td>
+        <td><%= link_to dosha.name, dosha %></td>
+        <td>
+          <ul>
+            <% dosha.subdoshas.each do |subdosha| %>
+              <li><%= link_to subdosha.name, subdosha %></li>
+            <% end %>
+          </ul>
+        </td>
         <td><%= link_to 'Show', dosha %></td>
         <td><%= link_to 'Edit', edit_dosha_path(dosha) %></td>
-        <td><%= link_to 'Destroy', dosha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', dosha, method: :delete, data: { confirm: 'Are you sure you want to delete this Dosha? This Action Cannot be undone.' } %></td>
       </tr>
     <% end %>
   </tbody>
