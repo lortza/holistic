@@ -10,6 +10,7 @@ class DoshasController < ApplicationController
   # GET /doshas/1
   # GET /doshas/1.json
   def show
+    @subdoshas = @dosha.subdoshas
   end
 
   # GET /doshas/new

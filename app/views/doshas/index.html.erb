@@ -18,7 +18,7 @@
         <td>
           <ul>
             <% dosha.subdoshas.each do |subdosha| %>
-              <li><%= link_to subdosha.name, subdosha %></li>
+              <li><%= link_to display_subdosha_fullname(subdosha), subdosha %></li>
             <% end %>
           </ul>
         </td>

@@ -5,5 +5,19 @@
   <%= @dosha.name %>
 </p>
 
+<p>
+  <strong>Location:</strong>
+  <%= @dosha.location %>
+</p>
+
+<p>
+  <strong>Subdoshas:</strong>
+  <ul>
+    <% @subdoshas.each do |subdosha| %>
+      <li><%= link_to display_subdosha_fullname(subdosha), subdosha %>: <%= subdosha.responsibility %></li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_dosha_path(@dosha) %> |
 <%= link_to 'Back', doshas_path %>
