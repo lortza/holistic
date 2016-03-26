@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @symptom.name %>
+</p>
+
+<p>
+  <strong>Related Subdoshas:</strong>
+  <ul>
+    <% @symptom.subdoshas.each do |subdosha| %>
+      <li><%= link_to display_subdosha_fullname(subdosha), subdosha %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_symptom_path(@symptom) %> |
+<%= link_to 'Back', symptoms_path %>
