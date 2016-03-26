@@ -21,6 +21,11 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.collection_check_boxes(:symptom_ids, Symptom.all.order(name: :asc), :id, :name) %> 
+  </div> <!-- field -->
+    
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -2,12 +2,26 @@
 
 <p>
   <strong>Subdosha Name:</strong>
-  <%= @subdosha.name %> <%= @subdosha.dosha.name %>
+  <%= display_subdosha_fullname(@subdosha) %>
+</p>
+
+<p>
+  <strong>Responsibilty:</strong>
+  <%= @subdosha.responsibility %>
 </p>
 
 <p>
   <strong>Dosha:</strong>
-  <%= @subdosha.dosha.name %>
+  <%= link_to @dosha.name, @dosha %>
+</p>
+
+<p>
+  <strong>Symptoms:</strong>
+  <ul>
+    <% @symptoms.each do |symptom| %>
+      <li><%= link_to symptom.name, symptom %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_subdosha_path(@subdosha) %> |

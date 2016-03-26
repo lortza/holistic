@@ -10,6 +10,8 @@ class SubdoshasController < ApplicationController
   # GET /subdoshas/1
   # GET /subdoshas/1.json
   def show
+    @symptoms = @subdosha.symptoms
+    @dosha = @subdosha.dosha
   end
 
   # GET /subdoshas/new
@@ -69,6 +71,6 @@ class SubdoshasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subdosha_params
-      params.require(:subdosha).permit(:name, :dosha_id)
+      params.require(:subdosha).permit(:name, :dosha_id, :order, :responsibility, symptom_ids: [])
     end
 end
