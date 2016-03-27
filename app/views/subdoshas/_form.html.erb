@@ -6,11 +6,13 @@
       <ul>
       <% @subdosha.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+      <% end %><!-- messages -->
       </ul>
     </div>
-  <% end %>
+  <% end %><!-- if -->
 
+<fieldset>
+  
   <div class="field">
     <%= f.label :dosha_id, "Dosha Name" %><br>
     <%= f.collection_select :dosha_id, Dosha.all, :id, :name, :prompt => "-- Select One --" %>
@@ -22,11 +24,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :symptom_ids, "Symptoms" %><br>
+    <p>Please select all symptoms for this subdosha:</p>
+  </div>
+
+  <div class="form-columns5">
     <%= f.collection_check_boxes(:symptom_ids, Symptom.all.order(name: :asc), :id, :name) %> 
   </div> <!-- field -->
-    
 
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+</fieldset>
+<% end %><!-- form_for -->
