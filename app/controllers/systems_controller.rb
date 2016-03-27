@@ -4,12 +4,13 @@ class SystemsController < ApplicationController
   # GET /systems
   # GET /systems.json
   def index
-    @systems = System.all
+    @systems = System.all.order("name")
   end
 
   # GET /systems/1
   # GET /systems/1.json
   def show
+    @symptoms = @system.symptoms.order("name")
   end
 
   # GET /systems/new

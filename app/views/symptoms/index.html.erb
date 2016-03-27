@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Symptoms Index</h1>
+<%= link_to '+ New Symptom', new_symptom_path %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Symptom</th>
       <th>Related Subdosha</th>
-      <th colspan="3"></th>
+      <th colspan="3">Manage Symptom</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @symptoms.order("name").each do |symptom| %>
+    <% @symptoms.each do |symptom| %>
       <tr>
-        <td><%= link_to symptom.name, symptom %></td>
+        <td><%= link_to symptom.name.titlecase, symptom %></td>
         <td>
           <ul>
             <% symptom.subdoshas.each do |subdosha| %>
-              <li><%= link_to subdosha.name, subdosha %></li>
+              <li><%= link_to display_subdosha_fullname(subdosha), subdosha %></li>
             <% end %>
           </ul>
         </td>
@@ -32,4 +33,3 @@
 
 <br>
 
-<%= link_to 'New Symptom', new_symptom_path %>

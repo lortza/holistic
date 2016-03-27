@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Subdosha Name:</strong>
+<h1>
+  <strong>Subdosha:</strong>
   <%= display_subdosha_fullname(@subdosha) %>
-</p>
+</h1>
 
 <p>
   <strong>Responsibilty:</strong>
@@ -11,14 +11,14 @@
 </p>
 
 <p>
-  <strong>Dosha:</strong>
+  <strong>Parent Dosha:</strong>
   <%= link_to @dosha.name, @dosha %>
 </p>
 
 <p>
   <strong>Symptoms:</strong>
   <ul>
-    <% @symptoms.each do |symptom| %>
+    <% @symptoms.order("name").each do |symptom| %>
       <li><%= link_to symptom.name, symptom %></li>
     <% end %>
   </ul>

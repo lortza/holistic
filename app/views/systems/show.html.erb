@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body System Name:</strong>
+<h1>
+  <strong>Body System:</strong>
   <%= @system.name %>
-</p>
+</h1>
 
 <p>
   <strong>Symptoms of the <%= @system.name %> System:</strong>
 </p>
 <ul>
-  <% @system.symptoms.each do |symptom| %>
+  <% @system.symptoms.order("name").each do |symptom| %>
     <li><%= link_to symptom.name, symptom %></li>
   <% end %>
 </ul>

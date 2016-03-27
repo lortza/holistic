@@ -2,7 +2,7 @@
 
 <h1>Subdoshas Index</h1>
 
-<table width="80%">
+<table class="table">
   <thead>
     <tr>
       <th>Subdosha Name</th>
@@ -21,7 +21,7 @@
         <td width="30%"><%= subdosha.responsibility %></td>
         <td>
           <ul>
-          <% subdosha.symptoms.each do |symptom| %>
+          <% subdosha.symptoms.order("name").each do |symptom| %>
             <li><%= link_to symptom.name, symptom %></li>
           <% end %>
           </ul>

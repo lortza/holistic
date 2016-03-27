@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
   end #display_subdosha_fullname
   helper_method :display_subdosha_fullname
 
+  def display_system_fullname(system)
+    "#{system.name} Systems"
+  end #display_subdosha_fullname
+  helper_method :display_system_fullname
+
 end

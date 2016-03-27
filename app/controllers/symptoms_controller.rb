@@ -4,7 +4,7 @@ class SymptomsController < ApplicationController
   # GET /symptoms
   # GET /symptoms.json
   def index
-    @symptoms = Symptom.all
+    @symptoms = Symptom.all.order("name")
   end
 
   # GET /symptoms/1

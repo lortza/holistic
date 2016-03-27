@@ -10,7 +10,7 @@ class SubdoshasController < ApplicationController
   # GET /subdoshas/1
   # GET /subdoshas/1.json
   def show
-    @symptoms = @subdosha.symptoms
+    @symptoms = @subdosha.symptoms.order("name")
     @dosha = @subdosha.dosha
   end
 

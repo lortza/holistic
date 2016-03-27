@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @symptom.name %>
-</p>
+<h1>
+  <strong>Symptom:</strong>
+  <%= @symptom.name.titlecase %>
+</h1>
 
 <p>
   <strong>Body System:</strong>
@@ -11,7 +11,7 @@
 </p>
 
 <p>
-  <strong>Related Subdoshas:</strong>
+  <strong>Subdoshas Responsible:</strong>
   <ul>
     <% @symptom.subdoshas.each do |subdosha| %>
       <li><%= link_to display_subdosha_fullname(subdosha), subdosha %></li>
@@ -20,4 +20,5 @@
 </p>
 
 <%= link_to 'Edit', edit_symptom_path(@symptom) %> |
-<%= link_to 'Back', symptoms_path %>
+<%= link_to 'Back', symptoms_path %> | 
+<%= link_to 'New Symptom', new_symptom_path %>

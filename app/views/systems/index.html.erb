@@ -2,7 +2,9 @@
 
 <h1>Body Systems Index</h1>
 
-<table>
+<%= link_to '+ New System', new_system_path %>
+
+<table class="table">
   <thead>
     <tr>
       <th>Body System</th>
@@ -14,10 +16,10 @@
   <tbody>
     <% @systems.each do |system| %>
       <tr>
-        <td><%= link_to system.name, system %></td>
+        <td><%= link_to display_system_fullname(system), system %></td>
         <td>
           <ul>
-          <% system.symptoms.each do |symptom| %>
+          <% system.symptoms.order("name").each do |symptom| %>
             <li><%= link_to symptom.name, symptom %></li>
           <% end %>
           </ul>
@@ -29,7 +31,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New System', new_system_path %>
