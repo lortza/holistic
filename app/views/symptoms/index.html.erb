@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @symptoms.each do |symptom| %>
+    <% @symptoms.order("name").each do |symptom| %>
       <tr>
         <td><%= link_to symptom.name, symptom %></td>
         <td>

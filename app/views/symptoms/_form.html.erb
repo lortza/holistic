@@ -16,6 +16,11 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.label :system_id, "System Name" %><br>
+    <%= f.collection_select :system_id, System.all, :id, :name, :prompt => "-- Select One --" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

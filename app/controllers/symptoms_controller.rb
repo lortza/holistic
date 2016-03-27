@@ -11,6 +11,7 @@ class SymptomsController < ApplicationController
   # GET /symptoms/1.json
   def show
     @subdoshas = @symptom.subdoshas
+    @system = @symptom.system
   end
 
   # GET /symptoms/new
@@ -70,6 +71,6 @@ class SymptomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def symptom_params
-      params.require(:symptom).permit(:name, subdosha_ids: [])
+      params.require(:symptom).permit(:name, :system_id, subdosha_ids: [])
     end
 end

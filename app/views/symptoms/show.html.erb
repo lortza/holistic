@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Body System:</strong>
+  <%= link_to @system.name, @system %>
+</p>
+
+<p>
   <strong>Related Subdoshas:</strong>
   <ul>
     <% @symptom.subdoshas.each do |subdosha| %>
