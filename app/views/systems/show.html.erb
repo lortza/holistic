@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body System Name:</strong>
+  <%= @system.name %>
+</p>
+
+<p>
+  <strong>Symptoms of the <%= @system.name %> System:</strong>
+</p>
+<ul>
+  <% @system.symptoms.each do |symptom| %>
+    <li><%= link_to symptom.name, symptom %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_system_path(@system) %> |
+<%= link_to 'Back', systems_path %>
