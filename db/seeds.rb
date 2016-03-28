@@ -20,6 +20,19 @@ Subdosha.create!([
   {name: "Tarpaka", dosha_id: 3, rank: 4, responsibility: "Governs calmness, happiness and stability. Nourishment of sense and motor organs. Located in the head, sinuses and cerebrospinal fluid."},
   {name: "Shleshaka", dosha_id: 3, rank: 5, responsibility: "Governs lubrication of all joints. Located in the joints."}
 ])
+System.create!([
+  {name: "Circulatory"},
+  {name: "Respiratory"},
+  {name: "Reproductive"},
+  {name: "Mental"},
+  {name: "Emotional"},
+  {name: "Skin / Hair / Nails"},
+  {name: "Nervous"},
+  {name: "Head / Neck / Face"},
+  {name: "Muscles & Bones"},
+  {name: "Whole Body"},
+  {name: "Digestive & Elimination"}
+])
 Symptom.create!([
   {name: "breathlessness", system_id: 2},
   {name: "lack of focus", system_id: 4},
@@ -243,16 +256,4 @@ SymptomSubdosha.create!([
   {symptom_id: 39, subdosha_id: 2},
   {symptom_id: 41, subdosha_id: 2}
 ])
-System.create!([
-  {name: "Circulatory"},
-  {name: "Respiratory"},
-  {name: "Reproductive"},
-  {name: "Mental"},
-  {name: "Emotional"},
-  {name: "Skin / Hair / Nails"},
-  {name: "Nervous"},
-  {name: "Head / Neck / Face"},
-  {name: "Muscles & Bones"},
-  {name: "Whole Body"},
-  {name: "Digestive & Elimination"}
-])
+
