@@ -1,24 +1,11 @@
 source 'https://rubygems.org'
-# ruby '2.2.1'
 ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '4.2.3'
-# gem 'rails', '~> 4.2.7.1'
 gem 'rails', '~> 4.2.10'
 
-# Dependency upgrades as per GitHub recommendations
-# gem 'actionpack', '~> 4.2.5.2'
-# gem 'actionview', '~> 4.2.7.1'
-# gem 'activemodel', '~> 4.2.5.1'
-# gem 'activerecord', '~> 4.2.7.1'
-# gem 'loofah', '~> 2.2.1'
-# gem 'nokogiri', '~> 1.8.2'
-# gem 'rails-html-sanitizer', '~> 1.0.4'
-# gem 'sprockets', '~> 3.7.2'
-
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.21'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
